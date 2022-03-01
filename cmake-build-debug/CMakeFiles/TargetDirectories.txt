@@ -1,0 +1,8 @@
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/CMakeFiles/5e.dir
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/CMakeFiles/edit_cache.dir
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/CMakeFiles/rebuild_cache.dir
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/string_/CMakeFiles/rebuild_cache.dir
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/string_/CMakeFiles/string_.dir
+C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/string_/CMakeFiles/edit_cache.dir
