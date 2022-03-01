@@ -9,6 +9,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <memory.h>
 
 // возвращает количество символов в строке.
 size_t strlen_(const char *begin);
@@ -43,7 +44,7 @@ int strcmp(const char *lhs, const char *rhs);
 char *copy(const char *beginSource, const char *endSource, char *beginDestination);
 
 // записывает по адресу beginDestination элементы из фрагмента памяти начиная с beginSource
-//заканчивая endSource, удовлетворяющие функции-предикату f.
+// заканчивая endSource, удовлетворяющие функции-предикату f.
 // Функция возвращает указатель на следующий свободный для записи фрагмент в памяти.
 char *copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int));
 

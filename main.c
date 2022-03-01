@@ -121,6 +121,116 @@
         test_strcmp1();
         test_strcmp2();
     }
+void test_copy1() {
+    char str[] = "123qwerty";
+    int lenghtStr = 9;
+
+    char endStr[] = "qwe";
+
+    char *resBegin = malloc(sizeof(char) * (lenghtStr + 1));
+
+    char *resEnd = copy(&str[3], &str[6], resBegin);
+    *resEnd = '\0';
+
+    assert(!strcmp(endStr, resBegin));
+
+    free(resBegin);
+}
+
+void test_copy2() {
+    char str[] = "qwerty";
+    int lenghtStr = 6;
+
+    char *resBegin = malloc(sizeof(char) * (lenghtStr + 1));
+
+    char *resEnd = copy(str, str + lenghtStr, resBegin);
+    *resEnd = '\0';
+
+    assert(!strcmp(str, resBegin));
+    free(resBegin);
+}
+
+void test_copy() {
+    test_copy1();
+    test_copy2();
+}
+int isDigit(int x) {
+    return x >= '0' && x <= '9';
+}
+
+void test_copyIf1() {
+    char str[] = "q1w2e3r4";
+    int lenghtStr = 8;
+
+    char endStr[] = "1234";
+
+    char *resBegin = malloc(sizeof(char) * (lenghtStr + 1));
+
+    char *resEnd = copyIf(str, str + lenghtStr, resBegin, isDigit);
+    *resEnd = '\0';
+
+    assert(!strcmp(endStr, resBegin));
+
+    free(resBegin);
+}
+
+void test_copyIf2() {
+    char str[] = "1qwe123rty1";
+    int lenghtStr = 11;
+
+    char endStr[] = "11231";
+
+    char *resBegin = malloc(sizeof(char) * (lenghtStr + 1));
+
+    char *resEnd = copyIf(str, str + lenghtStr, resBegin, isDigit);
+    *resEnd = '\0';
+
+    assert(!strcmp(endStr, resBegin));
+
+    free(resBegin);
+}
+
+void test_copyIf() {
+    test_copyIf1();
+    test_copyIf2();
+}
+
+void test_copyIfReverse1() {
+    char str[] = "1 q 2 w 3 e 4";
+    int lenghtStr = 13;
+
+    char endStr[] = "4321";
+
+    char *resBegin = malloc(sizeof(char) * (lenghtStr + 1));
+
+    char *resEnd = copyIfReverse(str + lenghtStr, str - 1, resBegin, isDigit);
+    *resEnd = '\0';
+
+    assert(!strcmp(endStr, resBegin));
+
+    free(resBegin);
+}
+
+void test_copyIfReverse2() {
+    char str[] = "qwerty";
+    int lenghtStr = 11;
+
+    char endStr[] = "\0";
+
+    char *resBegin = malloc(sizeof(char) * (lenghtStr + 1));
+
+    char *resEnd = copyIfReverse(str + lenghtStr, str, resBegin, isDigit);
+    *resEnd = '\0';
+
+    assert(!strcmp(endStr, resBegin));
+
+    free(resBegin);
+}
+
+void test_copyIfReverse() {
+    test_copyIfReverse1();
+    test_copyIfReverse2();
+}
 
     void test() {
         test_find();
@@ -131,9 +241,9 @@
 
         test_strcmp();
 
-       // test_copy();
-       // test_copyIf();
-       // test_copyIfReverse();
+        test_copy();
+        test_copyIf();
+        test_copyIfReverse();
     }
 int main() {
     test();
