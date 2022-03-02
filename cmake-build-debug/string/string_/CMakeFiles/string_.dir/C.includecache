@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Admin/CLionProjects/5e/string/string_/string_.c
-string_.h
-C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
-
 C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 stdio.h
 C:/Users/Admin/CLionProjects/5e/string/string_/stdio.h
@@ -22,11 +18,11 @@ assert.h
 memory.h
 -
 
-C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeNonLetters.c
-removeNonLetters.h
-C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeNonLetters.h
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeExtraSpaces.c
+removeExtraSpaces.h
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeExtraSpaces.h
 
-C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeNonLetters.h
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeExtraSpaces.h
 ../string_.h
 C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 

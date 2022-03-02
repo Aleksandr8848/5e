@@ -1,5 +1,6 @@
 #include "string/string_/string_.h"
 #include "string/string_/tasks/removeNonLetters.h"
+#include "string/string_/tasks/removeExtraSpaces.h"
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
 
@@ -284,7 +285,32 @@ void test_removeNonLetters() {
     test_removeNonLetters1();
     test_removeNonLetters2();
 }
+void test_removeExtraSpaces1() {
+    char str[] = "qwerty  123";
+
+    removeExtraSpaces(str);
+
+    char res[] = "qwerty 123";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_removeExtraSpaces2() {
+    char str[] = " qwe  rty 123 ";
+
+    removeExtraSpaces(str);
+
+    char res[] = " qwe rty 123 ";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_removeExtraSpaces() {
+    test_removeExtraSpaces1();
+    test_removeExtraSpaces2();
+}
 void test_tasks(){
+    test_removeExtraSpaces();
     test_removeNonLetters();
 }
 int main() {
