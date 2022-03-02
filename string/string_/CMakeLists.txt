@@ -1,1 +1,1 @@
-add_library(string_ string_.c)
+add_library(string_ string_.c tasks/ tasks/removeNonLetters.c tasks/removeNonLetters.h)

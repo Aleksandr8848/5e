@@ -1,126 +1,129 @@
 #include "string/string_/string_.h"
+#include "string/string_/tasks/removeNonLetters.h"
+#define ASSERT_STRING(expected, got) assertString(expected, got, \
+ __FILE__, __FUNCTION__, __LINE__)
+
+void test_find1() {
+    char str[] = "123qwerty";
+    int lenghtStr = 9;
+    char *res = &str[4];
+
+    assert(find(str, str + lenghtStr, 'w') == res);
+}
+
+void test_find2() {
+    char str[] = "123qwerty";
+    int lenghtStr = 9;
+    char *res = &str[8];
+
+    assert(find(str, str + lenghtStr, 'y') == res);
+}
+
+void test_find() {
+    test_find1();
+    test_find2();
+}
+
+void test_findNonSpace1() {
+    char str[] = "  123qwerty";
+    char *res = &str[2];
+
+    assert(findNonSpace(str) == res);
+}
+
+void test_findNonSpace2() {
+    char str[] = "   ";
+    char *res = &str[3];
+
+    assert(findNonSpace(str) == res);
+}
+
+void test_findNonSpace() {
+    test_findNonSpace1();
+    test_findNonSpace2();
+}
 
 
-    void test_find1(){
-        char str[] = "123qwerty";
-        int lenghtStr = 9;
-        char *res = &str[4];
+void test_findSpace1() {
+    char str[] = "123qwerty";
+    char *res = &str[9];
 
-        assert(find(str, str + lenghtStr, 'w') == res);
-    }
+    assert(findSpace(str) == res);
+}
 
-    void test_find2() {
-        char str[] = "123qwerty";
-        int lenghtStr = 9;
-        char *res = &str[8];
+void test_findSpace2() {
+    char str[] = "123 qwe rty";
+    char *res = &str[3];
 
-        assert(find(str, str + lenghtStr, 'y') == res);
-    }
+    assert(findSpace(str) == res);
+}
 
-    void test_find() {
-        test_find1();
-        test_find2();
-    }
+void test_findSpace() {
+    test_findSpace1();
+    test_findSpace2();
+}
 
-    void test_findNonSpace1() {
-        char str[] = "  123qwerty";
-        char *res = &str[2];
+void test_findSpaceReverse1() {
+    char str[] = "123 qwe rty";
+    char *res = &str[7];
+    int lenghtStr = 11;
 
-        assert(findNonSpace(str) == res);
-    }
+    assert(findSpaceReverse(str + lenghtStr - 1, str) == res);
+}
 
-    void test_findNonSpace2() {
-        char str[] = "   ";
-        char *res = &str[3];
+void test_findSpaceReverse2() {
+    char str[] = "123qwerty";
+    char *res = str;
+    int lenghtStr = 9;
 
-        assert(findNonSpace(str) == res);
-    }
+    assert(findSpaceReverse(str + lenghtStr - 1, str) == res);
+}
 
-    void test_findNonSpace() {
-        test_findNonSpace1();
-        test_findNonSpace2();
-    }
+void test_findSpaceReverse() {
+    test_findSpaceReverse1();
+    test_findSpaceReverse2();
+}
 
+void test_findNonSpaceReverse1() {
+    char str[] = "     1";
+    char *res = &str[5];
+    int lenghtStr = 6;
 
-    void test_findSpace1() {
-        char str[] = "123qwerty";
-        char *res = &str[9];
+    assert(findNonSpaceReverse(str + lenghtStr - 1, str) == res);
+}
 
-        assert(findSpace(str) == res);
-    }
+void test_findNonSpaceReverse2() {
+    char str[] = "   ";
+    char *res = str;
+    int lenghtStr = 3;
 
-    void test_findSpace2() {
-        char str[] = "123 qwe rty";
-        char *res = &str[3];
+    assert(findNonSpaceReverse(str + lenghtStr - 1, str) == res);
+}
 
-        assert(findSpace(str) == res);
-    }
+void test_findNonSpaceReverse() {
+    test_findNonSpaceReverse1();
+    test_findNonSpaceReverse2();
+}
 
-    void test_findSpace() {
-        test_findSpace1();
-        test_findSpace2();
-    }
+void test_strcmp1() {
+    char str[] = "123qwerty";
+    char res[] = "123qwerty";
 
-    void test_findSpaceReverse1() {
-        char str[] = "123 qwe rty";
-        char *res = &str[7];
-        int lenghtStr = 11;
+    assert(!strcmp_(str, res));
+}
 
-        assert(findSpaceReverse(str + lenghtStr - 1, str) == res);
-    }
+void test_strcmp2() {
+    char str[] = "123";
+    char res[] = "321";
 
-    void test_findSpaceReverse2() {
-        char str[] = "123qwerty";
-        char *res = str;
-        int lenghtStr = 9;
+    assert(strcmp_(str, res));
+}
 
-        assert(findSpaceReverse(str + lenghtStr - 1, str) == res);
-    }
+void test_strcmp_() {
+    test_strcmp1();
+    test_strcmp2();
+}
 
-    void test_findSpaceReverse() {
-        test_findSpaceReverse1();
-        test_findSpaceReverse2();
-    }
-
-    void test_findNonSpaceReverse1() {
-        char str[] = "     1";
-        char *res = &str[5];
-        int lenghtStr = 6;
-
-        assert(findNonSpaceReverse(str + lenghtStr - 1, str) == res);
-    }
-
-    void test_findNonSpaceReverse2() {
-        char str[] = "   ";
-        char *res = str;
-        int lenghtStr = 3;
-
-        assert(findNonSpaceReverse(str + lenghtStr - 1, str) == res);
-    }
-
-    void test_findNonSpaceReverse() {
-        test_findNonSpaceReverse1();
-        test_findNonSpaceReverse2();
-    }
-
-    void test_strcmp1() {
-        char str[] = "123qwerty";
-        char res[] = "123qwerty";
-
-        assert(!strcmp(str, res));
-    }
-
-    void test_strcmp2() {
-        char str[] = "123";
-        char res[] = "321";
-
-        assert(strcmp(str, res));
-    }
-
-    void test_strcmp() {
-        test_strcmp1();
-        test_strcmp2();
-    }
 void test_copy1() {
     char str[] = "123qwerty";
     int lenghtStr = 9;
@@ -132,7 +135,7 @@ void test_copy1() {
     char *resEnd = copy(&str[3], &str[6], resBegin);
     *resEnd = '\0';
 
-    assert(!strcmp(endStr, resBegin));
+    assert(!strcmp_(endStr, resBegin));
 
     free(resBegin);
 }
@@ -146,7 +149,7 @@ void test_copy2() {
     char *resEnd = copy(str, str + lenghtStr, resBegin);
     *resEnd = '\0';
 
-    assert(!strcmp(str, resBegin));
+    assert(!strcmp_(str, resBegin));
     free(resBegin);
 }
 
@@ -154,6 +157,7 @@ void test_copy() {
     test_copy1();
     test_copy2();
 }
+
 int isDigit(int x) {
     return x >= '0' && x <= '9';
 }
@@ -169,7 +173,7 @@ void test_copyIf1() {
     char *resEnd = copyIf(str, str + lenghtStr, resBegin, isDigit);
     *resEnd = '\0';
 
-    assert(!strcmp(endStr, resBegin));
+    assert(!strcmp_(endStr, resBegin));
 
     free(resBegin);
 }
@@ -185,7 +189,7 @@ void test_copyIf2() {
     char *resEnd = copyIf(str, str + lenghtStr, resBegin, isDigit);
     *resEnd = '\0';
 
-    assert(!strcmp(endStr, resBegin));
+    assert(!strcmp_(endStr, resBegin));
 
     free(resBegin);
 }
@@ -206,7 +210,7 @@ void test_copyIfReverse1() {
     char *resEnd = copyIfReverse(str + lenghtStr, str - 1, resBegin, isDigit);
     *resEnd = '\0';
 
-    assert(!strcmp(endStr, resBegin));
+    assert(!strcmp_(endStr, resBegin));
 
     free(resBegin);
 }
@@ -222,7 +226,7 @@ void test_copyIfReverse2() {
     char *resEnd = copyIfReverse(str + lenghtStr, str, resBegin, isDigit);
     *resEnd = '\0';
 
-    assert(!strcmp(endStr, resBegin));
+    assert(!strcmp_(endStr, resBegin));
 
     free(resBegin);
 }
@@ -232,20 +236,59 @@ void test_copyIfReverse() {
     test_copyIfReverse2();
 }
 
-    void test() {
-        test_find();
-        test_findNonSpace();
-        test_findSpace();
-        test_findNonSpaceReverse();
-        test_findSpaceReverse();
+void test_function() {
+    test_find();
+    test_findNonSpace();
+    test_findSpace();
+    test_findNonSpaceReverse();
+    test_findSpaceReverse();
 
-        test_strcmp();
+    test_strcmp_();
 
-        test_copy();
-        test_copyIf();
-        test_copyIfReverse();
-    }
+    test_copy();
+    test_copyIf();
+    test_copyIfReverse();
+}
+
+void assertString(const char *expected, char *got,
+                  char const *fileName, char const *funcName, int line) {
+    if (strcmp_(expected, got)) {
+        fprintf(stderr, "File %s\n", fileName);
+        fprintf(stderr, "%s - failed on line %d\n", funcName, line);
+        fprintf(stderr, "Expected: \"%s\"\n", expected);
+        fprintf(stderr, "Got: \"%s\"\n\n", got);
+    } else
+        fprintf(stderr, "%s - OK\n", funcName);
+}
+void test_removeNonLetters1() {
+    char str[] = " qw er ty ";
+
+    removeNonLetters(str);
+
+    char res[] = "qwerty";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_removeNonLetters2() {
+    char str[] = "    ";
+
+    removeNonLetters(str);
+
+    char res[] = "";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_removeNonLetters() {
+    test_removeNonLetters1();
+    test_removeNonLetters2();
+}
+void test_tasks(){
+    test_removeNonLetters();
+}
 int main() {
-    test();
+    test_function();
+    test_tasks();
     return 0;
 }

@@ -113,12 +113,21 @@
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/main.c">
 			<Option target="5e"/>
 		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_">
+			<Option target="string_"/>
+		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/string_.c">
 			<Option target="5e"/>
 			<Option target="string_"/>
 		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/string_.h">
 			<Option target="5e"/>
+		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeNonLetters.c">
+			<Option target="string_"/>
+		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeNonLetters.h">
+			<Option target="string_"/>
 		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

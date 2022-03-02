@@ -3,7 +3,8 @@
 
 CMakeFiles/5e.dir/main.c.obj: \
  ../main.c \
- ../string/string_/string_.h
+ ../string/string_/string_.h \
+ ../string/string_/tasks/removeNonLetters.h
 CMakeFiles/5e.dir/string/string_/string_.c.obj: \
  ../string/string_/string_.c \
  ../string/string_/string_.h

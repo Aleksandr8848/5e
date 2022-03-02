@@ -153,6 +153,30 @@ string_.c.s:
 	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/string_.c.s
 .PHONY : string_.c.s
 
+tasks/removeNonLetters.obj: tasks/removeNonLetters.c.obj
+.PHONY : tasks/removeNonLetters.obj
+
+# target to build an object file
+tasks/removeNonLetters.c.obj:
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.obj
+.PHONY : tasks/removeNonLetters.c.obj
+
+tasks/removeNonLetters.i: tasks/removeNonLetters.c.i
+.PHONY : tasks/removeNonLetters.i
+
+# target to preprocess a source file
+tasks/removeNonLetters.c.i:
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.i
+.PHONY : tasks/removeNonLetters.c.i
+
+tasks/removeNonLetters.s: tasks/removeNonLetters.c.s
+.PHONY : tasks/removeNonLetters.s
+
+# target to generate assembly for a file
+tasks/removeNonLetters.c.s:
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.s
+.PHONY : tasks/removeNonLetters.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -165,6 +189,9 @@ help:
 	@echo ... string_.obj
 	@echo ... string_.i
 	@echo ... string_.s
+	@echo ... tasks/removeNonLetters.obj
+	@echo ... tasks/removeNonLetters.i
+	@echo ... tasks/removeNonLetters.s
 .PHONY : help
 
 

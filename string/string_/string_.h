@@ -37,7 +37,7 @@ char *findSpaceReverse(char *rbegin, const char *rend);
 // возвращает отрицательное значение, если lhs располагается до rhs
 // в лексикографическом порядке (как в словаре), значение 0, если lhs и rhs
 // равны, иначе – положительное значение.
-int strcmp(const char *lhs, const char *rhs);
+int strcmp_(const char *lhs, const char *rhs);
 
 // записывает по адресу beginDestination фрагмент памяти, начиная с адреса beginSource до endSource.
 // Возвращает указатель на следующий свободный фрагмент памяти в destination.
