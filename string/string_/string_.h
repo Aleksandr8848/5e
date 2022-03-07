@@ -63,6 +63,8 @@ typedef struct WordDescriptor {
     char *end; // позиция первого символа, после последнего символа слова
 } WordDescriptor;
 
+char *getEndOfString(char *begin);
+
 bool getWord(char *beginSearch, WordDescriptor *word);
 
 bool getWordReverse(char *rBegin, char *rend, WordDescriptor *word);

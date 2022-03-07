@@ -83,6 +83,12 @@ char *copyIfReverse(char *rBeginSource, const char *rendSource, char *beginDesti
     return beginDestination;
 }
 
+char *getEndOfString(char *begin) {
+    while (*begin != '\0')
+        begin++;
+    return begin;
+}
+
 bool getWord(char *beginSearch, WordDescriptor *word) {
     word->begin = findNonSpace(beginSearch);
 

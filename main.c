@@ -2,6 +2,7 @@
 #include "string/string_/tasks/removeNonLetters.h"
 #include "string/string_/tasks/removeExtraSpaces.h"
 #include "string/string_/tasks/digitToStart.h"
+#include "string/string_/tasks/spaceInsteadDigits.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -375,12 +376,44 @@ void test_digitToStartForString() {
 
     ASSERT_STRING(res, str);
 }
+void test_spaceInsteadDigits_stringWithDigit(){
+    char str[] = "q1w0e2rty";
 
+    spaceInsteadDigits(str);
+
+    char res[] = "q we  rty";
+
+    ASSERT_STRING(res, str);
+}
+void test_spaceInsteadDigits_stringWithoutDigit(){
+    char str[] = "qwerty";
+
+    spaceInsteadDigits(str);
+
+    char res[] = "qwerty";
+
+    ASSERT_STRING(res, str);
+}
+void test_spaceInsteadDigits_stringDigits(){
+    char str[] = "0123";
+
+    spaceInsteadDigits(str);
+
+    char res[] = "      ";
+
+    ASSERT_STRING(res, str);
+}
+void test_spaceInsteadDigits(){
+    test_spaceInsteadDigits_stringWithDigit();
+    test_spaceInsteadDigits_stringWithoutDigit();
+    test_spaceInsteadDigits_stringDigits();
+}
 void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
     test_digitToStart();
     test_digitToStartForString();
+    test_spaceInsteadDigits();
 }
 
 int main() {
