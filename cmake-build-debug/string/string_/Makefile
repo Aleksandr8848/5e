@@ -153,6 +153,30 @@ string_.c.s:
 	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/string_.c.s
 .PHONY : string_.c.s
 
+tasks/digitToStart.obj: tasks/digitToStart.c.obj
+.PHONY : tasks/digitToStart.obj
+
+# target to build an object file
+tasks/digitToStart.c.obj:
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.obj
+.PHONY : tasks/digitToStart.c.obj
+
+tasks/digitToStart.i: tasks/digitToStart.c.i
+.PHONY : tasks/digitToStart.i
+
+# target to preprocess a source file
+tasks/digitToStart.c.i:
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.i
+.PHONY : tasks/digitToStart.c.i
+
+tasks/digitToStart.s: tasks/digitToStart.c.s
+.PHONY : tasks/digitToStart.s
+
+# target to generate assembly for a file
+tasks/digitToStart.c.s:
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.s
+.PHONY : tasks/digitToStart.c.s
+
 tasks/removeExtraSpaces.obj: tasks/removeExtraSpaces.c.obj
 .PHONY : tasks/removeExtraSpaces.obj
 
@@ -213,6 +237,9 @@ help:
 	@echo ... string_.obj
 	@echo ... string_.i
 	@echo ... string_.s
+	@echo ... tasks/digitToStart.obj
+	@echo ... tasks/digitToStart.i
+	@echo ... tasks/digitToStart.s
 	@echo ... tasks/removeExtraSpaces.obj
 	@echo ... tasks/removeExtraSpaces.i
 	@echo ... tasks/removeExtraSpaces.s

@@ -7,7 +7,7 @@
 
 #include "../string_.h"
 
-//удалить из строки все пробельные символы
+// удалить из строки все пробельные символы
 void removeNonLetters(char *s);
 
 #endif //INC_5E_REMOVENONLETTERS_H

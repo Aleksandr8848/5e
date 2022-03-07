@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Admin/CLionProjects/5e/string/string_/string_.c" "C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/string_/CMakeFiles/string_.dir/string_.c.obj"
+  "C:/Users/Admin/CLionProjects/5e/string/string_/tasks/digitToStart.c" "C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.obj"
   "C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeExtraSpaces.c" "C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/string_/CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.obj"
   "C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeNonLetters.c" "C:/Users/Admin/CLionProjects/5e/cmake-build-debug/string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.obj"
   )

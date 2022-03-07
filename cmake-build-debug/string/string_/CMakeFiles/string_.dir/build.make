@@ -104,11 +104,25 @@ string/string_/CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.s"
 	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug\string\string_ && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Admin\CLionProjects\5e\string\string_\tasks\removeExtraSpaces.c -o CMakeFiles\string_.dir\tasks\removeExtraSpaces.c.s
 
+string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.obj: string/string_/CMakeFiles/string_.dir/flags.make
+string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.obj: ../string/string_/tasks/digitToStart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Admin\CLionProjects\5e\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.obj"
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug\string\string_ && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\string_.dir\tasks\digitToStart.c.obj -c C:\Users\Admin\CLionProjects\5e\string\string_\tasks\digitToStart.c
+
+string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/string_.dir/tasks/digitToStart.c.i"
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug\string\string_ && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Admin\CLionProjects\5e\string\string_\tasks\digitToStart.c > CMakeFiles\string_.dir\tasks\digitToStart.c.i
+
+string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/string_.dir/tasks/digitToStart.c.s"
+	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug\string\string_ && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Admin\CLionProjects\5e\string\string_\tasks\digitToStart.c -o CMakeFiles\string_.dir\tasks\digitToStart.c.s
+
 # Object files for target string_
 string__OBJECTS = \
 "CMakeFiles/string_.dir/string_.c.obj" \
 "CMakeFiles/string_.dir/tasks/removeNonLetters.c.obj" \
-"CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.obj"
+"CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.obj" \
+"CMakeFiles/string_.dir/tasks/digitToStart.c.obj"
 
 # External object files for target string_
 string__EXTERNAL_OBJECTS =
@@ -116,9 +130,10 @@ string__EXTERNAL_OBJECTS =
 string/string_/libstring_.a: string/string_/CMakeFiles/string_.dir/string_.c.obj
 string/string_/libstring_.a: string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.obj
 string/string_/libstring_.a: string/string_/CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.obj
+string/string_/libstring_.a: string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.obj
 string/string_/libstring_.a: string/string_/CMakeFiles/string_.dir/build.make
 string/string_/libstring_.a: string/string_/CMakeFiles/string_.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Admin\CLionProjects\5e\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libstring_.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Admin\CLionProjects\5e\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libstring_.a"
 	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug\string\string_ && $(CMAKE_COMMAND) -P CMakeFiles\string_.dir\cmake_clean_target.cmake
 	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug\string\string_ && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\string_.dir\link.txt --verbose=$(VERBOSE)
 

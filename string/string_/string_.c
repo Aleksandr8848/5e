@@ -33,14 +33,14 @@ char *findSpace(char *begin) {
 }
 
 char *findNonSpaceReverse(char *rbegin, const char *rend) {
-    while (isspace(*rbegin) && rbegin > rend)
+    while (isspace(*rbegin) && rbegin != rend)
         rbegin--;
 
     return rbegin;
 }
 
 char *findSpaceReverse(char *rbegin, const char *rend) {
-    while (!isspace(*rbegin) && rbegin > rend)
+    while (!isspace(*rbegin) && rbegin != rend)
         rbegin--;
 
     return rbegin;
@@ -82,3 +82,26 @@ char *copyIfReverse(char *rBeginSource, const char *rendSource, char *beginDesti
     }
     return beginDestination;
 }
+
+bool getWord(char *beginSearch, WordDescriptor *word) {
+    word->begin = findNonSpace(beginSearch);
+
+    if (*word->begin == '\0')
+        return false;
+
+    word->end = findSpace(word->begin);
+
+    return true;
+}
+
+bool getWordReverse(char *rBegin, char *rend, WordDescriptor *word) {
+    word->end = findNonSpaceReverse(rBegin, rend);
+
+    if (word->end == rend)
+        return false;
+
+    word->begin = findSpaceReverse(word->end, rend);
+
+    return true;
+}
+

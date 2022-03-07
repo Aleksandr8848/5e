@@ -1,18 +1,39 @@
 #include "string/string_/string_.h"
 #include "string/string_/tasks/removeNonLetters.h"
 #include "string/string_/tasks/removeExtraSpaces.h"
+#include "string/string_/tasks/digitToStart.h"
+
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
 
-void test_find1() {
+void test_strlen_string() {
     char str[] = "123qwerty";
     int lenghtStr = 9;
-    char *res = &str[4];
 
-    assert(find(str, str + lenghtStr, 'w') == res);
+    assert(lenghtStr == strlen_(str));
 }
 
-void test_find2() {
+void test_strlen_stringEmpty() {
+    char str[] = "";
+    int lenghtStr = 0;
+
+    assert(lenghtStr == strlen_(str));
+}
+
+void test_strlen_() {
+    test_strlen_string();
+    test_strlen_stringEmpty();
+}
+
+void test_find_firstEl() {
+    char str[] = "123qwerty";
+    int lenghtStr = 9;
+    char *res = &str[0];
+
+    assert(find(str, str + lenghtStr, '1') == res);
+}
+
+void test_find_lastEl() {
     char str[] = "123qwerty";
     int lenghtStr = 9;
     char *res = &str[8];
@@ -20,19 +41,35 @@ void test_find2() {
     assert(find(str, str + lenghtStr, 'y') == res);
 }
 
-void test_find() {
-    test_find1();
-    test_find2();
+void test_find_stringNoEl() {
+    char str[] = "123qwerty";
+    int lenghtStr = 9;
+    char *res = &str[9];
+
+    assert(find(str, str + lenghtStr, '0') == res);
 }
 
-void test_findNonSpace1() {
+void test_find() {
+    test_find_firstEl();
+    test_find_lastEl();
+    test_find_stringNoEl();
+}
+
+void test_findNonSpace_stringWithSpace() {
     char str[] = "  123qwerty";
     char *res = &str[2];
 
     assert(findNonSpace(str) == res);
 }
 
-void test_findNonSpace2() {
+void test_findNonSpace_stringWithoutSpace() {
+    char str[] = "123qwerty";
+    char *res = &str[0];
+
+    assert(findNonSpace(str) == res);
+}
+
+void test_findNonSpace_stringSpace() {
     char str[] = "   ";
     char *res = &str[3];
 
@@ -40,19 +77,20 @@ void test_findNonSpace2() {
 }
 
 void test_findNonSpace() {
-    test_findNonSpace1();
-    test_findNonSpace2();
+    test_findNonSpace_stringSpace();
+    test_findNonSpace_stringWithSpace();
+    test_findNonSpace_stringWithoutSpace();
 }
 
 
-void test_findSpace1() {
+void test_findSpace_stringWithoutSpace() {
     char str[] = "123qwerty";
     char *res = &str[9];
 
     assert(findSpace(str) == res);
 }
 
-void test_findSpace2() {
+void test_findSpace_stringWithSpace() {
     char str[] = "123 qwe rty";
     char *res = &str[3];
 
@@ -60,11 +98,11 @@ void test_findSpace2() {
 }
 
 void test_findSpace() {
-    test_findSpace1();
-    test_findSpace2();
+    test_findSpace_stringWithSpace();
+    test_findSpace_stringWithoutSpace();
 }
 
-void test_findSpaceReverse1() {
+void test_findSpaceReverse_stringWithSpace() {
     char str[] = "123 qwe rty";
     char *res = &str[7];
     int lenghtStr = 11;
@@ -72,7 +110,7 @@ void test_findSpaceReverse1() {
     assert(findSpaceReverse(str + lenghtStr - 1, str) == res);
 }
 
-void test_findSpaceReverse2() {
+void test_findSpaceReverse_stringWithoutSpace() {
     char str[] = "123qwerty";
     char *res = str;
     int lenghtStr = 9;
@@ -81,11 +119,11 @@ void test_findSpaceReverse2() {
 }
 
 void test_findSpaceReverse() {
-    test_findSpaceReverse1();
-    test_findSpaceReverse2();
+    test_findSpaceReverse_stringWithSpace();
+    test_findSpaceReverse_stringWithSpace();
 }
 
-void test_findNonSpaceReverse1() {
+void test_findNonSpaceReverse_stringWithSpace() {
     char str[] = "     1";
     char *res = &str[5];
     int lenghtStr = 6;
@@ -93,7 +131,7 @@ void test_findNonSpaceReverse1() {
     assert(findNonSpaceReverse(str + lenghtStr - 1, str) == res);
 }
 
-void test_findNonSpaceReverse2() {
+void test_findNonSpaceReverse_stringSpace() {
     char str[] = "   ";
     char *res = str;
     int lenghtStr = 3;
@@ -102,18 +140,18 @@ void test_findNonSpaceReverse2() {
 }
 
 void test_findNonSpaceReverse() {
-    test_findNonSpaceReverse1();
-    test_findNonSpaceReverse2();
+    test_findNonSpaceReverse_stringSpace();
+    test_findNonSpaceReverse_stringWithSpace();
 }
 
-void test_strcmp1() {
+void test_strcmp_stringEqual() {
     char str[] = "123qwerty";
     char res[] = "123qwerty";
 
     assert(!strcmp_(str, res));
 }
 
-void test_strcmp2() {
+void test_strcmp_stringNotEqual() {
     char str[] = "123";
     char res[] = "321";
 
@@ -121,11 +159,11 @@ void test_strcmp2() {
 }
 
 void test_strcmp_() {
-    test_strcmp1();
-    test_strcmp2();
+    test_strcmp_stringNotEqual();
+    test_strcmp_stringEqual();
 }
 
-void test_copy1() {
+void test_copy_partString() {
     char str[] = "123qwerty";
     int lenghtStr = 9;
 
@@ -141,7 +179,7 @@ void test_copy1() {
     free(resBegin);
 }
 
-void test_copy2() {
+void test_copy_fullString() {
     char str[] = "qwerty";
     int lenghtStr = 6;
 
@@ -155,31 +193,15 @@ void test_copy2() {
 }
 
 void test_copy() {
-    test_copy1();
-    test_copy2();
+    test_copy_fullString();
+    test_copy_partString();
 }
 
 int isDigit(int x) {
     return x >= '0' && x <= '9';
 }
 
-void test_copyIf1() {
-    char str[] = "q1w2e3r4";
-    int lenghtStr = 8;
-
-    char endStr[] = "1234";
-
-    char *resBegin = malloc(sizeof(char) * (lenghtStr + 1));
-
-    char *resEnd = copyIf(str, str + lenghtStr, resBegin, isDigit);
-    *resEnd = '\0';
-
-    assert(!strcmp_(endStr, resBegin));
-
-    free(resBegin);
-}
-
-void test_copyIf2() {
+void test_copyIf_digit() {
     char str[] = "1qwe123rty1";
     int lenghtStr = 11;
 
@@ -196,11 +218,10 @@ void test_copyIf2() {
 }
 
 void test_copyIf() {
-    test_copyIf1();
-    test_copyIf2();
+    test_copyIf_digit();
 }
 
-void test_copyIfReverse1() {
+void test_copyIfReverse_digit_stringWithSpace() {
     char str[] = "1 q 2 w 3 e 4";
     int lenghtStr = 13;
 
@@ -216,9 +237,9 @@ void test_copyIfReverse1() {
     free(resBegin);
 }
 
-void test_copyIfReverse2() {
+void test_copyIfReverse_digit() {
     char str[] = "qwerty";
-    int lenghtStr = 11;
+    int lenghtStr = 6;
 
     char endStr[] = "\0";
 
@@ -233,11 +254,13 @@ void test_copyIfReverse2() {
 }
 
 void test_copyIfReverse() {
-    test_copyIfReverse1();
-    test_copyIfReverse2();
+    test_copyIfReverse_digit();
+    test_copyIfReverse_digit_stringWithSpace();
 }
 
 void test_function() {
+    test_strlen_();
+
     test_find();
     test_findNonSpace();
     test_findSpace();
@@ -261,7 +284,8 @@ void assertString(const char *expected, char *got,
     } else
         fprintf(stderr, "%s - OK\n", funcName);
 }
-void test_removeNonLetters1() {
+
+void test_removeNonLetters_stringWithSpace() {
     char str[] = " qw er ty ";
 
     removeNonLetters(str);
@@ -271,7 +295,7 @@ void test_removeNonLetters1() {
     ASSERT_STRING(res, str);
 }
 
-void test_removeNonLetters2() {
+void test_removeNonLetters_stringSpace() {
     char str[] = "    ";
 
     removeNonLetters(str);
@@ -282,10 +306,11 @@ void test_removeNonLetters2() {
 }
 
 void test_removeNonLetters() {
-    test_removeNonLetters1();
-    test_removeNonLetters2();
+    test_removeNonLetters_stringSpace();
+    test_removeNonLetters_stringWithSpace();
 }
-void test_removeExtraSpaces1() {
+
+void test_removeExtraSpaces_stringWithExtraSpace() {
     char str[] = "qwerty  123";
 
     removeExtraSpaces(str);
@@ -295,24 +320,69 @@ void test_removeExtraSpaces1() {
     ASSERT_STRING(res, str);
 }
 
-void test_removeExtraSpaces2() {
-    char str[] = " qwe  rty 123 ";
+void test_removeExtraSpaces_stringExtraSpace() {
+    char str[] = "        ";
 
     removeExtraSpaces(str);
 
-    char res[] = " qwe rty 123 ";
+    char res[] = " ";
 
     ASSERT_STRING(res, str);
 }
 
 void test_removeExtraSpaces() {
-    test_removeExtraSpaces1();
-    test_removeExtraSpaces2();
+    test_removeExtraSpaces_stringExtraSpace();
+    test_removeExtraSpaces_stringWithExtraSpace();
 }
-void test_tasks(){
+
+void test_digitToStart_oneWord() {
+    char str[] = "qwe1rty23";
+    WordDescriptor word;
+
+    getWord(str, &word);
+
+    digitToStart(word);
+
+    char res[] = "321qwerty";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_digitToStart_twoWord() {
+    char str[] = "qwe12 rt3y";
+    WordDescriptor word;
+
+    getWord(str, &word);
+
+    digitToStart(word);
+
+    char res[] = "21qwe rt3y";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_digitToStart() {
+    test_digitToStart_oneWord();
+    test_digitToStart_twoWord();
+}
+
+void test_digitToStartForString() {
+    char str[] = "qwe12 rt3y";
+
+    digitToStartForString(str);
+
+    char res[] = "21qwe 3rty";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
+    test_digitToStart();
+    test_digitToStartForString();
 }
+
 int main() {
     test_function();
     test_tasks();

@@ -4,6 +4,7 @@
 CMakeFiles/5e.dir/main.c.obj: \
  ../main.c \
  ../string/string_/string_.h \
+ ../string/string_/tasks/digitToStart.h \
  ../string/string_/tasks/removeExtraSpaces.h \
  ../string/string_/tasks/removeNonLetters.h
 CMakeFiles/5e.dir/string/string_/string_.c.obj: \
