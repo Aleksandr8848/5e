@@ -18,13 +18,11 @@ void replace(char *source, char *w1, char *w2) {
     if (w1Size >= w2Size) {
         readPtr = source;
     } else {
-        char *endBuff = copy(source, getEndOfString(source), _stringBuffer);
-        *endBuff = '\0';
+        copy(source, getEndOfString(source) + 1, _stringBuffer);
         readPtr = _stringBuffer;
     }
     wordDescriptor readWord;
-    while (*readPtr != '\0') {
-        getWord(readPtr, &readWord);
+    while (getWord(readPtr, &readWord)) {
         if (areWordsEqual(word1, readWord))
             recPtr = copy(word2.begin, word2.end, recPtr);
         else
@@ -34,7 +32,7 @@ void replace(char *source, char *w1, char *w2) {
         readPtr = readWord.end;
     }
     if (recPtr != source)
-    *--recPtr = '\0';
+        *--recPtr = '\0';
 }
 
 #endif //INC_5E_REPLACE_H

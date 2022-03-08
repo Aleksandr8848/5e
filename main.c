@@ -10,7 +10,7 @@
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
-/*
+
 void test_strlen_string() {
     char str[] = "123qwerty";
     int lenghtStr = 9;
@@ -429,16 +429,28 @@ void test_spaceInsteadDigits() {
     test_spaceInsteadDigits_stringDigits();
 }
 
-void test_replace() {
-    char str[] = "qwe rty";
+void test_replace_W1SizeMoreW2Size() {
+    char str[] = "qwerty";
 
-    replace(str, "rty", "qwe");
+    replace(str, "qwerty", "qwe");
 
-    char res[] = "qwe qwe";
+    char res[] = "qwe";
 
     ASSERT_STRING(res, str);
 }
+void test_replace_W1SizeLessW2Size() {
+    char str[] = "qwe";
 
+    replace(str, "qwe", "qwerty");
+
+    char res[] = "qwerty";
+
+    ASSERT_STRING(res, str);
+}
+void test_replace(){
+    test_replace_W1SizeMoreW2Size();
+    test_replace_W1SizeLessW2Size();
+}
 void test_sortedWord_isSorted() {
     char str[] = "asd bnv zxc";
 
@@ -467,7 +479,7 @@ void test_sortedWord() {
     test_sortedWord_isEqualWords();
     test_sortedWord_stringWithEqualWords();
 }
-*/
+
 void test_getCountPalindromeWords_stringWithPalindromeWords(){
     char str[] = "aboba, qwerty, qweewq, 1111";
 
@@ -489,18 +501,18 @@ void test_getCountPalindromeWords(){
     test_getCountPalindromeWords_stringWithoutPalindromeWords();
 }
 void test_tasks() {
-//    test_removeExtraSpaces();
-//    test_removeNonLetters();
-//    test_digitToStart();
-//    test_digitToStartForString();
-//    test_spaceInsteadDigits();
-//    test_replace();
- //   test_sortedWord();
-    test_getCountPalindromeWords();
+   test_removeExtraSpaces();
+    test_removeNonLetters();
+    test_digitToStart();
+    test_digitToStartForString();
+    test_spaceInsteadDigits();
+    test_replace();
+    test_sortedWord();
+//    test_getCountPalindromeWords();
 }
 
 int main() {
-//    test_function();
+    test_function();
     test_tasks();
     return 0;
 }
