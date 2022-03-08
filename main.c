@@ -9,6 +9,7 @@
 #include "string/string_/tasks/getCountPalindromeWords.h"
 #include "string/string_/tasks/getMergeString.h"
 #include "string/string_/tasks/printWordBeforeFirstWordWithA.h"
+#include "string/string_/tasks/stringHaveEqualWords.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -540,25 +541,51 @@ void test_getMergeString() {
     test_getMergeString_notEqualWordsCount();
 
 }
+
 void testAll_getWordBeforeFirstWordWithA() {
-     wordDescriptor word;
+    wordDescriptor word;
 
-     char s1[] = "";
-     assert(getWordBeforeFirstWordWithA(s1, &word)== EMPTY_STRING);
+    char s1[] = "";
+    assert(getWordBeforeFirstWordWithA(s1, &word) == EMPTY_STRING);
 
-     char s2[] = "ABC";
-     assert(getWordBeforeFirstWordWithA(s2, &word)== FIRST_WORD_WITH_A);
+    char s2[] = "ABC";
+    assert(getWordBeforeFirstWordWithA(s2, &word) == FIRST_WORD_WITH_A);
 
-     char s3[] = "BC A";
-      assert(getWordBeforeFirstWordWithA(s3, &word)== WORD_FOUND);
-     char got[MAX_WORD_SIZE];
-     copy(word.begin, word.end, got);
-     got[word.end - word.begin] = '\0';
-     ASSERT_STRING("BC", got);
+    char s3[] = "BC A";
+    assert(getWordBeforeFirstWordWithA(s3, &word) == WORD_FOUND);
+    char got[MAX_WORD_SIZE];
+    copy(word.begin, word.end, got);
+    got[word.end - word.begin] = '\0';
+    ASSERT_STRING("BC", got);
 
-     char s4[] = "B Q WE YR OW IUWR";
-     assert(getWordBeforeFirstWordWithA(s4, &word) == NOT_FOUND_A_WORD_WITH_A);
+    char s4[] = "B Q WE YR OW IUWR";
+    assert(getWordBeforeFirstWordWithA(s4, &word) == NOT_FOUND_A_WORD_WITH_A);
 }
+
+void test_isStringHaveEqualWords_withEqualWords() {
+    char str[] = "wasd 1234 wasd";
+
+    assert(isStringHaveEqualWords(str) == true);
+}
+
+void test_isStringHaveEqualWords_withoutEqualWords() {
+    char str[] = "wasd 1234 qwerty";
+
+    assert(isStringHaveEqualWords(str) == false);
+}
+
+void test_isStringHaveEqualWords_emptyString() {
+    char str[] = "";
+
+    assert(isStringHaveEqualWords(str) == false);
+}
+
+void test_isStringHaveEqualWords() {
+    test_isStringHaveEqualWords_withEqualWords();
+    test_isStringHaveEqualWords_withoutEqualWords();
+    test_isStringHaveEqualWords_emptyString();
+}
+
 void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
@@ -570,6 +597,7 @@ void test_tasks() {
     test_getCountPalindromeWords();
     test_getMergeString();
     testAll_getWordBeforeFirstWordWithA();
+    test_isStringHaveEqualWords();
 }
 
 int main() {

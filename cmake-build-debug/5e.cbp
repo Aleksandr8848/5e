@@ -153,6 +153,9 @@
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/spaceInsteadDigits.h">
 			<Option target="string_"/>
 		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/stringHaveEqualWords.h">
+			<Option target="string_"/>
+		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

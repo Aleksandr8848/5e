@@ -13,7 +13,8 @@ CMakeFiles/5e.dir/main.c.obj: \
  ../string/string_/tasks/removeNonLetters.h \
  ../string/string_/tasks/replace.h \
  ../string/string_/tasks/sortedWord.h \
- ../string/string_/tasks/spaceInsteadDigits.h
+ ../string/string_/tasks/spaceInsteadDigits.h \
+ ../string/string_/tasks/stringHaveEqualWords.h
 CMakeFiles/5e.dir/string/string_/string_.c.obj: \
  ../string/string_/string_.c \
  ../string/string_/string_.h
