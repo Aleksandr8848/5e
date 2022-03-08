@@ -8,8 +8,8 @@
 #include "digitToStart.h"
 
 void spaceInsteadDigits(char *s) {
-    char *beginBuffer = stringBuffer_;
-    char *endBuffer = copy(s, getEndOfString(s), stringBuffer_);
+    char *beginBuffer = _stringBuffer;
+    char *endBuffer = copy(s, getEndOfString(s), _stringBuffer);
     char *begin = s;
 
     while (beginBuffer < endBuffer){
@@ -18,9 +18,9 @@ void spaceInsteadDigits(char *s) {
             for (int i = 0; i < spaceCount; ++i) {
                 *begin++ = ' ';
             }
-        }else {
+        }else 
             *begin++ = *beginBuffer;
-        }
+
         beginBuffer++;
     }
     *begin = '\0';

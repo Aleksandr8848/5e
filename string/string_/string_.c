@@ -55,10 +55,10 @@ int strcmp_(const char *lhs, const char *rhs) {
 }
 
 char *copy(const char *beginSource, const char *endSource, char *beginDestination) {
+    size_t size = endSource - beginSource;
+    memcpy(beginDestination, beginSource, sizeof(char) * size);
 
-    memcpy(beginDestination, beginSource, sizeof(char) * (endSource - beginSource));
-
-    return beginDestination + (endSource - beginSource);
+    return beginDestination + size;
 }
 
 char *copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
@@ -89,7 +89,7 @@ char *getEndOfString(char *begin) {
     return begin;
 }
 
-bool getWord(char *beginSearch, WordDescriptor *word) {
+bool getWord(char *beginSearch, wordDescriptor *word) {
     word->begin = findNonSpace(beginSearch);
 
     if (*word->begin == '\0')
@@ -100,7 +100,7 @@ bool getWord(char *beginSearch, WordDescriptor *word) {
     return true;
 }
 
-bool getWordReverse(char *rBegin, char *rend, WordDescriptor *word) {
+bool getWordReverse(char *rBegin, char *rend, wordDescriptor *word) {
     word->end = findNonSpaceReverse(rBegin, rend);
 
     if (word->end == rend)
@@ -111,3 +111,8 @@ bool getWordReverse(char *rBegin, char *rend, WordDescriptor *word) {
     return true;
 }
 
+bool areWordsEqual(wordDescriptor w1, wordDescriptor w2) {
+    if (w1.end - w1.begin != w2.end - w2.begin)
+        return false;
+    return memcmp(w1.begin, w2.begin,w1.end - w1.begin) == 0;
+}

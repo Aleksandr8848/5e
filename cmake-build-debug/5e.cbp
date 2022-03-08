@@ -141,6 +141,12 @@
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeNonLetters.h">
 			<Option target="string_"/>
 		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/replace.h">
+			<Option target="string_"/>
+		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/sortedWord.h">
+			<Option target="string_"/>
+		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/spaceInsteadDigits.h">
 			<Option target="string_"/>
 		</Unit>

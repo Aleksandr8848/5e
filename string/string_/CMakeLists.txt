@@ -1,1 +1,1 @@
-add_library(string_ string_.c tasks/ tasks/removeNonLetters.c tasks/removeNonLetters.h tasks/removeExtraSpaces.c tasks/removeExtraSpaces.h tasks/digitToStart.c tasks/digitToStart.h tasks/spaceInsteadDigits.h)
+add_library(string_ string_.c tasks/ tasks/removeNonLetters.c tasks/removeNonLetters.h tasks/removeExtraSpaces.c tasks/removeExtraSpaces.h tasks/digitToStart.c tasks/digitToStart.h tasks/spaceInsteadDigits.h tasks/replace.h tasks/sortedWord.h)

@@ -3,6 +3,8 @@
 #include "string/string_/tasks/removeExtraSpaces.h"
 #include "string/string_/tasks/digitToStart.h"
 #include "string/string_/tasks/spaceInsteadDigits.h"
+#include "string/string_/tasks/replace.h"
+#include "string/string_/tasks/sortedWord.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -121,7 +123,7 @@ void test_findSpaceReverse_stringWithoutSpace() {
 
 void test_findSpaceReverse() {
     test_findSpaceReverse_stringWithSpace();
-    test_findSpaceReverse_stringWithSpace();
+    test_findSpaceReverse_stringWithoutSpace();
 }
 
 void test_findNonSpaceReverse_stringWithSpace() {
@@ -259,6 +261,17 @@ void test_copyIfReverse() {
     test_copyIfReverse_digit_stringWithSpace();
 }
 
+void test_areWordsEqual() {
+    char str[] = "qwerty";
+    wordDescriptor w1;
+    wordDescriptor w2;
+
+    getWord(str, &w1);
+    getWord(str, &w2);
+
+    assert(areWordsEqual(w1, w2));
+}
+
 void test_function() {
     test_strlen_();
 
@@ -269,6 +282,7 @@ void test_function() {
     test_findSpaceReverse();
 
     test_strcmp_();
+    test_areWordsEqual();
 
     test_copy();
     test_copyIf();
@@ -338,7 +352,7 @@ void test_removeExtraSpaces() {
 
 void test_digitToStart_oneWord() {
     char str[] = "qwe1rty23";
-    WordDescriptor word;
+    wordDescriptor word;
 
     getWord(str, &word);
 
@@ -351,7 +365,7 @@ void test_digitToStart_oneWord() {
 
 void test_digitToStart_twoWord() {
     char str[] = "qwe12 rt3y";
-    WordDescriptor word;
+    wordDescriptor word;
 
     getWord(str, &word);
 
@@ -376,7 +390,8 @@ void test_digitToStartForString() {
 
     ASSERT_STRING(res, str);
 }
-void test_spaceInsteadDigits_stringWithDigit(){
+
+void test_spaceInsteadDigits_stringWithDigit() {
     char str[] = "q1w0e2rty";
 
     spaceInsteadDigits(str);
@@ -385,7 +400,8 @@ void test_spaceInsteadDigits_stringWithDigit(){
 
     ASSERT_STRING(res, str);
 }
-void test_spaceInsteadDigits_stringWithoutDigit(){
+
+void test_spaceInsteadDigits_stringWithoutDigit() {
     char str[] = "qwerty";
 
     spaceInsteadDigits(str);
@@ -394,7 +410,8 @@ void test_spaceInsteadDigits_stringWithoutDigit(){
 
     ASSERT_STRING(res, str);
 }
-void test_spaceInsteadDigits_stringDigits(){
+
+void test_spaceInsteadDigits_stringDigits() {
     char str[] = "0123";
 
     spaceInsteadDigits(str);
@@ -403,17 +420,60 @@ void test_spaceInsteadDigits_stringDigits(){
 
     ASSERT_STRING(res, str);
 }
-void test_spaceInsteadDigits(){
+
+void test_spaceInsteadDigits() {
     test_spaceInsteadDigits_stringWithDigit();
     test_spaceInsteadDigits_stringWithoutDigit();
     test_spaceInsteadDigits_stringDigits();
 }
+
+void test_replace() {
+    char str[] = "qwe rty";
+
+    replace(str, "rty", "qwe");
+
+    char res[] = "qwe qwe";
+
+    ASSERT_STRING(res, str);
+}
+
+void test_sortedWord_isSorted() {
+    char str[] = "asd bnv zxc";
+
+    assert(isSortedWords(str) == true);
+}
+
+void test_sortedWord_isNotSorted() {
+    char str[] = "qwe wasd rty";
+
+    assert(isSortedWords(str) == false);
+}
+
+void test_sortedWord_isEqualWords() {
+    char str[] = "a a a";
+
+    assert(isSortedWords(str) == true);
+}
+void test_sortedWord_stringWithEqualWords() {
+    char str[] = "b b a";
+
+    assert(isSortedWords(str) == false);
+}
+void test_sortedWord() {
+    test_sortedWord_isSorted();
+    test_sortedWord_isNotSorted();
+    test_sortedWord_isEqualWords();
+    test_sortedWord_stringWithEqualWords();
+}
+
 void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
     test_digitToStart();
     test_digitToStartForString();
     test_spaceInsteadDigits();
+//    test_replace();
+    test_sortedWord();
 }
 
 int main() {
