@@ -114,5 +114,26 @@ bool getWordReverse(char *rBegin, char *rend, wordDescriptor *word) {
 bool areWordsEqual(wordDescriptor w1, wordDescriptor w2) {
     if (w1.end - w1.begin != w2.end - w2.begin)
         return false;
-    return memcmp(w1.begin, w2.begin,w1.end - w1.begin) == 0;
+    return memcmp(w1.begin, w2.begin, w1.end - w1.begin) == 0;
+}
+
+void getBagOfWords(BagOfWords *bag, char *s) {
+    wordDescriptor readW;
+    wordDescriptor *readWs = bag->words;
+    size_t size = 0;
+    while (getWord(s, &readW)) {
+        readWs->begin = readW.begin;
+        readWs->end = readW.end;
+        readWs++;
+        size++;
+        s = readW.end;
+    }
+    bag->size = size;
+}
+
+void printWord(wordDescriptor word) {
+    char *end = word.end;
+    for (char *i = word.begin; i < end; ++i)
+        printf("%c", *i);
+    printf("\n");
 }

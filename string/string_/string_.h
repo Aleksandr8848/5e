@@ -15,7 +15,21 @@
 #define MAX_STRING_SIZE 100
 #define MAX_N_WORDS_IN_STRING 100
 #define MAX_WORD_SIZE 20
+
+typedef struct wordDescriptor {
+    char *begin; // позиция начала слова
+    char *end; // позиция первого символа, после последнего символа слова
+} wordDescriptor;
+
 char _stringBuffer[MAX_STRING_SIZE + 1];
+
+typedef struct BagOfWords {
+    wordDescriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} BagOfWords;
+
+BagOfWords _bag;
+BagOfWords _bag2;
 
 // возвращает количество символов в строке.
 size_t strlen_(const char *begin);
@@ -58,11 +72,6 @@ char *copyIf(char *beginSource, const char *endSource, char *beginDestination, i
 // возвращает значение beginDestination по окончанию работы функции.
 char *copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int));
 
-typedef struct wordDescriptor {
-    char *begin; // позиция начала слова
-    char *end; // позиция первого символа, после последнего символа слова
-} wordDescriptor;
-
 char *getEndOfString(char *begin);
 
 // Функция вернёт значение 0, если слово не было считано, в противном
@@ -75,4 +84,8 @@ bool getWordReverse(char *rBegin, char *rend, wordDescriptor *word);
 // сравнивает два слова, если слова одинаковые возвращает "истина", иначе ложь.
 bool areWordsEqual(wordDescriptor w1, wordDescriptor w2);
 
+void getBagOfWords(BagOfWords *bag, char *s);
+
+// выводит слово word
+void printWord(wordDescriptor word);
 #endif //INC_5E_STRING__H

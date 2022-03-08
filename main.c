@@ -5,6 +5,7 @@
 #include "string/string_/tasks/spaceInsteadDigits.h"
 #include "string/string_/tasks/replace.h"
 #include "string/string_/tasks/sortedWord.h"
+#include "string/string_/tasks/printWordsReverse.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -479,5 +480,7 @@ void test_tasks() {
 int main() {
     test_function();
     test_tasks();
+    char str[] = "asd bnv zxc";
+    printWordsReverse(str);
     return 0;
 }
