@@ -137,3 +137,39 @@ void printWord(wordDescriptor word) {
         printf("%c", *i);
     printf("\n");
 }
+
+char *findCommas(char *begin) {
+    while (*begin != '\0' && *begin != ',')
+        begin++;
+    return begin;
+}
+
+char *findNonCommas(char *begin) {
+    while (*begin == ',')
+        begin++;
+    return begin;
+}
+
+bool getWordCommas(char *beginSearch, wordDescriptor *word) {
+    word->begin = findNonSpace(beginSearch);
+    if (*word->begin == '\0')
+        return false;
+
+    word->end = findCommas(word->begin);
+    return true;
+}
+
+bool isWordPalindrome(wordDescriptor word) {
+    char *left = word.begin;
+    char *right = word.end - 1;
+
+    while (left < right) {
+        if (*left != *right)
+            return false;
+
+        left++;
+        right--;
+    }
+
+    return true;
+}

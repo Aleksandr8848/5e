@@ -153,78 +153,6 @@ string_.c.s:
 	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/string_.c.s
 .PHONY : string_.c.s
 
-tasks/digitToStart.obj: tasks/digitToStart.c.obj
-.PHONY : tasks/digitToStart.obj
-
-# target to build an object file
-tasks/digitToStart.c.obj:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.obj
-.PHONY : tasks/digitToStart.c.obj
-
-tasks/digitToStart.i: tasks/digitToStart.c.i
-.PHONY : tasks/digitToStart.i
-
-# target to preprocess a source file
-tasks/digitToStart.c.i:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.i
-.PHONY : tasks/digitToStart.c.i
-
-tasks/digitToStart.s: tasks/digitToStart.c.s
-.PHONY : tasks/digitToStart.s
-
-# target to generate assembly for a file
-tasks/digitToStart.c.s:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/digitToStart.c.s
-.PHONY : tasks/digitToStart.c.s
-
-tasks/removeExtraSpaces.obj: tasks/removeExtraSpaces.c.obj
-.PHONY : tasks/removeExtraSpaces.obj
-
-# target to build an object file
-tasks/removeExtraSpaces.c.obj:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.obj
-.PHONY : tasks/removeExtraSpaces.c.obj
-
-tasks/removeExtraSpaces.i: tasks/removeExtraSpaces.c.i
-.PHONY : tasks/removeExtraSpaces.i
-
-# target to preprocess a source file
-tasks/removeExtraSpaces.c.i:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.i
-.PHONY : tasks/removeExtraSpaces.c.i
-
-tasks/removeExtraSpaces.s: tasks/removeExtraSpaces.c.s
-.PHONY : tasks/removeExtraSpaces.s
-
-# target to generate assembly for a file
-tasks/removeExtraSpaces.c.s:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeExtraSpaces.c.s
-.PHONY : tasks/removeExtraSpaces.c.s
-
-tasks/removeNonLetters.obj: tasks/removeNonLetters.c.obj
-.PHONY : tasks/removeNonLetters.obj
-
-# target to build an object file
-tasks/removeNonLetters.c.obj:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.obj
-.PHONY : tasks/removeNonLetters.c.obj
-
-tasks/removeNonLetters.i: tasks/removeNonLetters.c.i
-.PHONY : tasks/removeNonLetters.i
-
-# target to preprocess a source file
-tasks/removeNonLetters.c.i:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.i
-.PHONY : tasks/removeNonLetters.c.i
-
-tasks/removeNonLetters.s: tasks/removeNonLetters.c.s
-.PHONY : tasks/removeNonLetters.s
-
-# target to generate assembly for a file
-tasks/removeNonLetters.c.s:
-	cd /d C:\Users\Admin\CLionProjects\5e\cmake-build-debug && $(MAKE) $(MAKESILENT) -f string\string_\CMakeFiles\string_.dir\build.make string/string_/CMakeFiles/string_.dir/tasks/removeNonLetters.c.s
-.PHONY : tasks/removeNonLetters.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -237,15 +165,6 @@ help:
 	@echo ... string_.obj
 	@echo ... string_.i
 	@echo ... string_.s
-	@echo ... tasks/digitToStart.obj
-	@echo ... tasks/digitToStart.i
-	@echo ... tasks/digitToStart.s
-	@echo ... tasks/removeExtraSpaces.obj
-	@echo ... tasks/removeExtraSpaces.i
-	@echo ... tasks/removeExtraSpaces.s
-	@echo ... tasks/removeNonLetters.obj
-	@echo ... tasks/removeNonLetters.i
-	@echo ... tasks/removeNonLetters.s
 .PHONY : help
 
 

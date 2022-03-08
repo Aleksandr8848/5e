@@ -88,4 +88,16 @@ void getBagOfWords(BagOfWords *bag, char *s);
 
 // выводит слово word
 void printWord(wordDescriptor word);
+
+// возвращает указатель на первую запятую, расположенный на ленте памяти начиная с адреса begin
+//или на первый ноль-символ.
+char *findCommas(char *begin);
+
+
+char *findNonCommas(char *begin);
+
+
+bool getWordCommas(char *beginSearch, wordDescriptor *word);
+
+bool isWordPalindrome(wordDescriptor word);
 #endif //INC_5E_STRING__H

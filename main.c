@@ -6,10 +6,11 @@
 #include "string/string_/tasks/replace.h"
 #include "string/string_/tasks/sortedWord.h"
 #include "string/string_/tasks/printWordsReverse.h"
+#include "string/string_/tasks/getCountPalindromeWords.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
-
+/*
 void test_strlen_string() {
     char str[] = "123qwerty";
     int lenghtStr = 9;
@@ -466,21 +467,40 @@ void test_sortedWord() {
     test_sortedWord_isEqualWords();
     test_sortedWord_stringWithEqualWords();
 }
+*/
+void test_getCountPalindromeWords_stringWithPalindromeWords(){
+    char str[] = "aboba, qwerty, qweewq, 1111";
 
+    int res = 3;
+
+    assert(res == getCountPalindromeWords(str));
+
+}
+void test_getCountPalindromeWords_stringWithoutPalindromeWords(){
+    char str[] = "wasd, qwerty, 1234";
+
+    int res = 0;
+
+    assert(res == getCountPalindromeWords(str));
+}
+
+void test_getCountPalindromeWords(){
+    test_getCountPalindromeWords_stringWithPalindromeWords();
+    test_getCountPalindromeWords_stringWithoutPalindromeWords();
+}
 void test_tasks() {
-    test_removeExtraSpaces();
-    test_removeNonLetters();
-    test_digitToStart();
-    test_digitToStartForString();
-    test_spaceInsteadDigits();
+//    test_removeExtraSpaces();
+//    test_removeNonLetters();
+//    test_digitToStart();
+//    test_digitToStartForString();
+//    test_spaceInsteadDigits();
 //    test_replace();
-    test_sortedWord();
+ //   test_sortedWord();
+    test_getCountPalindromeWords();
 }
 
 int main() {
-    test_function();
+//    test_function();
     test_tasks();
-    char str[] = "asd bnv zxc";
-    printWordsReverse(str);
     return 0;
 }
