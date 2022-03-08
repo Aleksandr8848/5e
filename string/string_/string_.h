@@ -100,4 +100,5 @@ char *findNonCommas(char *begin);
 bool getWordCommas(char *beginSearch, wordDescriptor *word);
 
 bool isWordPalindrome(wordDescriptor word);
+
 #endif //INC_5E_STRING__H

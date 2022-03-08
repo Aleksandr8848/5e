@@ -8,6 +8,7 @@
 #include "string/string_/tasks/printWordsReverse.h"
 #include "string/string_/tasks/getCountPalindromeWords.h"
 #include "string/string_/tasks/getMergeString.h"
+#include "string/string_/tasks/printWordBeforeFirstWordWithA.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -539,7 +540,25 @@ void test_getMergeString() {
     test_getMergeString_notEqualWordsCount();
 
 }
+void testAll_getWordBeforeFirstWordWithA() {
+     wordDescriptor word;
 
+     char s1[] = "";
+     assert(getWordBeforeFirstWordWithA(s1, &word)== EMPTY_STRING);
+
+     char s2[] = "ABC";
+     assert(getWordBeforeFirstWordWithA(s2, &word)== FIRST_WORD_WITH_A);
+
+     char s3[] = "BC A";
+      assert(getWordBeforeFirstWordWithA(s3, &word)== WORD_FOUND);
+     char got[MAX_WORD_SIZE];
+     copy(word.begin, word.end, got);
+     got[word.end - word.begin] = '\0';
+     ASSERT_STRING("BC", got);
+
+     char s4[] = "B Q WE YR OW IUWR";
+     assert(getWordBeforeFirstWordWithA(s4, &word) == NOT_FOUND_A_WORD_WITH_A);
+}
 void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
@@ -550,10 +569,13 @@ void test_tasks() {
     test_sortedWord();
     test_getCountPalindromeWords();
     test_getMergeString();
+    testAll_getWordBeforeFirstWordWithA();
 }
 
 int main() {
     test_function();
     test_tasks();
+    char s3[] = "BC A";
+    printWordBeforeFirstWordWithA(s3);
     return 0;
 }
