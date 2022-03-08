@@ -6,12 +6,12 @@
 #define INC_5E_GETCOUNTPALINDROMEWORDS_H
 
 int getCountPalindromeWords(char *s) {
+    char *readPtr = s;
     int count = 0;
     wordDescriptor word;
-    while (getWordCommas(s, &word)) {
-        if (isWordPalindrome(word))
-            count++;
-        s = word.end;
+    while (getWordCommas(readPtr, &word)) {
+        count += isWordPalindrome(word);
+        readPtr = word.end + (*word.end != '\0');
     }
     return count;
 }

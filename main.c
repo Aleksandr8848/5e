@@ -7,6 +7,7 @@
 #include "string/string_/tasks/sortedWord.h"
 #include "string/string_/tasks/printWordsReverse.h"
 #include "string/string_/tasks/getCountPalindromeWords.h"
+#include "string/string_/tasks/getMergeString.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -438,6 +439,7 @@ void test_replace_W1SizeMoreW2Size() {
 
     ASSERT_STRING(res, str);
 }
+
 void test_replace_W1SizeLessW2Size() {
     char str[] = "qwe";
 
@@ -447,10 +449,12 @@ void test_replace_W1SizeLessW2Size() {
 
     ASSERT_STRING(res, str);
 }
-void test_replace(){
+
+void test_replace() {
     test_replace_W1SizeMoreW2Size();
     test_replace_W1SizeLessW2Size();
 }
+
 void test_sortedWord_isSorted() {
     char str[] = "asd bnv zxc";
 
@@ -468,11 +472,13 @@ void test_sortedWord_isEqualWords() {
 
     assert(isSortedWords(str) == true);
 }
+
 void test_sortedWord_stringWithEqualWords() {
     char str[] = "b b a";
 
     assert(isSortedWords(str) == false);
 }
+
 void test_sortedWord() {
     test_sortedWord_isSorted();
     test_sortedWord_isNotSorted();
@@ -480,7 +486,7 @@ void test_sortedWord() {
     test_sortedWord_stringWithEqualWords();
 }
 
-void test_getCountPalindromeWords_stringWithPalindromeWords(){
+void test_getCountPalindromeWords_stringWithPalindromeWords() {
     char str[] = "aboba, qwerty, qweewq, 1111";
 
     int res = 3;
@@ -488,7 +494,8 @@ void test_getCountPalindromeWords_stringWithPalindromeWords(){
     assert(res == getCountPalindromeWords(str));
 
 }
-void test_getCountPalindromeWords_stringWithoutPalindromeWords(){
+
+void test_getCountPalindromeWords_stringWithoutPalindromeWords() {
     char str[] = "wasd, qwerty, 1234";
 
     int res = 0;
@@ -496,19 +503,53 @@ void test_getCountPalindromeWords_stringWithoutPalindromeWords(){
     assert(res == getCountPalindromeWords(str));
 }
 
-void test_getCountPalindromeWords(){
+void test_getCountPalindromeWords() {
     test_getCountPalindromeWords_stringWithPalindromeWords();
     test_getCountPalindromeWords_stringWithoutPalindromeWords();
 }
+
+void test_getMergeString_equalWordsCount() {
+    char str1[] = "eee have nine";
+    char str2[] = "i done task";
+
+    char merge[MAX_STRING_SIZE];
+
+    getMergeString(str1, str2, merge);
+
+    char res[] = "eee i have done nine task";
+
+    ASSERT_STRING(res, merge);
+}
+
+void test_getMergeString_notEqualWordsCount() {
+    char str1[] = "oh ten more tasks";
+    char str2[] = "no";
+
+    char merge[MAX_STRING_SIZE];
+
+    getMergeString(str1, str2, merge);
+
+    char res[] = "oh no ten more tasks";
+
+    ASSERT_STRING(res, merge);
+}
+
+void test_getMergeString() {
+    test_getMergeString_equalWordsCount();
+    test_getMergeString_notEqualWordsCount();
+
+}
+
 void test_tasks() {
-   test_removeExtraSpaces();
+    test_removeExtraSpaces();
     test_removeNonLetters();
     test_digitToStart();
     test_digitToStartForString();
     test_spaceInsteadDigits();
     test_replace();
     test_sortedWord();
-//    test_getCountPalindromeWords();
+    test_getCountPalindromeWords();
+    test_getMergeString();
 }
 
 int main() {

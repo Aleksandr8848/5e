@@ -1,1 +1,1 @@
-add_library(string_ string_.c tasks/ tasks/removeNonLetters.h tasks/removeExtraSpaces.h tasks/digitToStart.h tasks/spaceInsteadDigits.h tasks/replace.h tasks/sortedWord.h tasks/printWordsReverse.h tasks/getCountPalindromeWords.h)
+add_library(string_ string_.c tasks/ tasks/removeNonLetters.h tasks/removeExtraSpaces.h tasks/digitToStart.h tasks/spaceInsteadDigits.h tasks/replace.h tasks/sortedWord.h tasks/printWordsReverse.h tasks/getCountPalindromeWords.h tasks/getMergeString.h)
