@@ -7,6 +7,7 @@ CMakeFiles/5e.dir/main.c.obj: \
  ../string/string_/tasks/digitToStart.h \
  ../string/string_/tasks/getCountPalindromeWords.h \
  ../string/string_/tasks/getMergeString.h \
+ ../string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h \
  ../string/string_/tasks/printWordBeforeFirstWordWithA.h \
  ../string/string_/tasks/printWordsReverse.h \
  ../string/string_/tasks/removeExtraSpaces.h \

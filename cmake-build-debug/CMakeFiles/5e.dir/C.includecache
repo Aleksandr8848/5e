@@ -31,6 +31,8 @@ string/string_/tasks/printWordBeforeFirstWordWithA.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/printWordBeforeFirstWordWithA.h
 string/string_/tasks/stringHaveEqualWords.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/stringHaveEqualWords.h
+string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h
 
 C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 stdio.h
@@ -53,6 +55,10 @@ C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getCountPalindromeWords.h
 
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getMergeString.h
+../string_.h
+C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
+
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h
 ../string_.h
 C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 

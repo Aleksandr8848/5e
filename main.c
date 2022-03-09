@@ -10,6 +10,7 @@
 #include "string/string_/tasks/getMergeString.h"
 #include "string/string_/tasks/printWordBeforeFirstWordWithA.h"
 #include "string/string_/tasks/stringHaveEqualWords.h"
+#include "string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -585,7 +586,29 @@ void test_isStringHaveEqualWords() {
     test_isStringHaveEqualWords_withoutEqualWords();
     test_isStringHaveEqualWords_emptyString();
 }
+void test_getStringWithoutLastWordAndEqualToNim_stringWithWordEqualLastWord() {
+    char str[] = "1 2 3 1";
+    char s[MAX_STRING_SIZE + 1];
+    getStringWithoutLastWordAndEqualToNim(str,s);
 
+    char res[MAX_STRING_SIZE + 1] = "2 3";
+
+    ASSERT_STRING(res, s);
+}
+void test_getStringWithoutLastWordAndEqualToNim_stringWithoutWordEqualLastWord(){
+    char str[] = "qw er ty";
+    char s[MAX_STRING_SIZE + 1];
+    getStringWithoutLastWordAndEqualToNim(str,s);
+
+    char res[] = "qw er";
+
+    ASSERT_STRING(res, s);
+
+}
+void test_getStringWithoutLastWordAndEqualToNim(){
+    test_getStringWithoutLastWordAndEqualToNim_stringWithWordEqualLastWord();
+    test_getStringWithoutLastWordAndEqualToNim_stringWithoutWordEqualLastWord();
+}
 void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
@@ -598,6 +621,7 @@ void test_tasks() {
     test_getMergeString();
     testAll_getWordBeforeFirstWordWithA();
     test_isStringHaveEqualWords();
+    test_getStringWithoutLastWordAndEqualToNim();
 }
 
 int main() {
