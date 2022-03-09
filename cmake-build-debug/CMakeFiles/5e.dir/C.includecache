@@ -39,6 +39,8 @@ string/string_/tasks/getLastWordInFirstStringFromSecondString.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getLastWordInFirstStringFromSecondString.h
 string/string_/tasks/isLettersOfWordsInStringEqual.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isLettersOfWordsInStringEqual.h
+string/string_/tasks/isStringHaveAllLetters.h
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isStringHaveAllLetters.h
 
 C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 stdio.h
@@ -81,6 +83,10 @@ C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isLettersOfWordsInStringEqu
 C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 ../tasks/stringHaveEqualWords.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/stringHaveEqualWords.h
+
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isStringHaveAllLetters.h
+../string_.h
+C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/printWordBeforeFirstWordWithA.h
 ../string_.h

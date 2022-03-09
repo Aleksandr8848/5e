@@ -14,6 +14,7 @@
 #include "string/string_/tasks/deletePalindromWords.h"
 #include "string/string_/tasks/getLastWordInFirstStringFromSecondString.h"
 #include "string/string_/tasks/isLettersOfWordsInStringEqual.h"
+#include "string/string_/tasks/isStringHaveAllLetters.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -768,7 +769,38 @@ void test_isLettersOfWordsInStringEqual() {
     test_isLettersOfWordsInStringEqual_isNotEqualLetters();
     test_isLettersOfWordsInStringEqual_isEmptyString();
 }
+void test_isStringHaveAllLetters_1() {
+    char s1[MAX_STRING_SIZE + 1] = "qwerty";
+    char s2[MAX_STRING_SIZE + 1] = "ytrqwe";
+    wordDescriptor w;
+    getWord(s2, &w);
 
+    assert(isStringHaveAllLetters(s1, w) == true);
+}
+
+void test_isStringHaveAllLetters_2() {
+    char s1[MAX_STRING_SIZE + 1] = "wasd";
+    char s2[MAX_STRING_SIZE + 1] = "wsqe";
+    wordDescriptor w;
+    getWord(s2, &w);
+
+    assert(isStringHaveAllLetters(s1, w) == false);
+}
+
+void test_isStringHaveAllLetters_3() {
+    char s1[MAX_STRING_SIZE + 1] = "";
+    char s2[MAX_STRING_SIZE + 1] = "wasd";
+    wordDescriptor w;
+    getWord(s2, &w);
+
+    assert(isStringHaveAllLetters(s1, w) == false);
+}
+
+void test_isStringHaveAllLetters() {
+    test_isStringHaveAllLetters_1();
+    test_isStringHaveAllLetters_2();
+    test_isStringHaveAllLetters_3();
+}
 void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
@@ -785,6 +817,7 @@ void test_tasks() {
     test_deletePalindromeWords();
     test_getLastWordInFirstStringFromSecondString();
     test_isLettersOfWordsInStringEqual();
+    test_isStringHaveAllLetters();
 }
 
 int main() {

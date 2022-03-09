@@ -144,6 +144,9 @@
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isLettersOfWordsInStringEqual.h">
 			<Option target="string_"/>
 		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isStringHaveAllLetters.h">
+			<Option target="string_"/>
+		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/printWordBeforeFirstWordWithA.h">
 			<Option target="string_"/>
 		</Unit>

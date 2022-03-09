@@ -11,6 +11,7 @@ CMakeFiles/5e.dir/main.c.obj: \
  ../string/string_/tasks/getMergeString.h \
  ../string/string_/tasks/getStringWithoutEqualLastWord.h \
  ../string/string_/tasks/isLettersOfWordsInStringEqual.h \
+ ../string/string_/tasks/isStringHaveAllLetters.h \
  ../string/string_/tasks/printWordBeforeFirstWordWithA.h \
  ../string/string_/tasks/printWordsReverse.h \
  ../string/string_/tasks/removeExtraSpaces.h \
