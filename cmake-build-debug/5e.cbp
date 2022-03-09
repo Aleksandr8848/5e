@@ -126,19 +126,22 @@
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deletePalindromWords.h">
 			<Option target="string_"/>
 		</Unit>
-		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deleteWordsEqualLastWord.h">
-			<Option target="string_"/>
-		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/digitToStart.h">
 			<Option target="string_"/>
 		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getCountPalindromeWords.h">
 			<Option target="string_"/>
 		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getLastWordInFirstStringFromSecondString.h">
+			<Option target="string_"/>
+		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getMergeString.h">
 			<Option target="string_"/>
 		</Unit>
-		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h">
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getStringWithoutEqualLastWord.h">
+			<Option target="string_"/>
+		</Unit>
+		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isLettersOfWordsInStringEqual.h">
 			<Option target="string_"/>
 		</Unit>
 		<Unit filename="C:/Users/Admin/CLionProjects/5e/string/string_/tasks/printWordBeforeFirstWordWithA.h">

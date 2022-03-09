@@ -5,11 +5,12 @@ CMakeFiles/5e.dir/main.c.obj
  C:/Users/Admin/CLionProjects/5e/main.c
  C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
  C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deletePalindromWords.h
- C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deleteWordsEqualLastWord.h
  C:/Users/Admin/CLionProjects/5e/string/string_/tasks/digitToStart.h
  C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getCountPalindromeWords.h
+ C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getLastWordInFirstStringFromSecondString.h
  C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getMergeString.h
- C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h
+ C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getStringWithoutEqualLastWord.h
+ C:/Users/Admin/CLionProjects/5e/string/string_/tasks/isLettersOfWordsInStringEqual.h
  C:/Users/Admin/CLionProjects/5e/string/string_/tasks/printWordBeforeFirstWordWithA.h
  C:/Users/Admin/CLionProjects/5e/string/string_/tasks/printWordsReverse.h
  C:/Users/Admin/CLionProjects/5e/string/string_/tasks/removeExtraSpaces.h

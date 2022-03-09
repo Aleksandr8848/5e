@@ -5,11 +5,12 @@ CMakeFiles/5e.dir/main.c.obj: \
  ../main.c \
  ../string/string_/string_.h \
  ../string/string_/tasks/deletePalindromWords.h \
- ../string/string_/tasks/deleteWordsEqualLastWord.h \
  ../string/string_/tasks/digitToStart.h \
  ../string/string_/tasks/getCountPalindromeWords.h \
+ ../string/string_/tasks/getLastWordInFirstStringFromSecondString.h \
  ../string/string_/tasks/getMergeString.h \
- ../string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h \
+ ../string/string_/tasks/getStringWithoutEqualLastWord.h \
+ ../string/string_/tasks/isLettersOfWordsInStringEqual.h \
  ../string/string_/tasks/printWordBeforeFirstWordWithA.h \
  ../string/string_/tasks/printWordsReverse.h \
  ../string/string_/tasks/removeExtraSpaces.h \

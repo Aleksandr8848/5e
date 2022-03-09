@@ -10,12 +10,20 @@
 #include "string/string_/tasks/getMergeString.h"
 #include "string/string_/tasks/printWordBeforeFirstWordWithA.h"
 #include "string/string_/tasks/stringHaveEqualWords.h"
-#include "string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h"
-#include "string/string_/tasks/deleteWordsEqualLastWord.h"
+#include "string/string_/tasks/getStringWithoutEqualLastWord.h"
 #include "string/string_/tasks/deletePalindromWords.h"
+#include "string/string_/tasks/getLastWordInFirstStringFromSecondString.h"
+#include "string/string_/tasks/isLettersOfWordsInStringEqual.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
+
+void wordDescriptorToString(wordDescriptor word, char *destination) {
+    for (; word.begin < word.end; word.begin++)
+        *(destination++) = *word.begin;
+
+    *destination = '\0';
+}
 
 void test_strlen_string() {
     char str[] = "123qwerty";
@@ -279,6 +287,7 @@ void test_areWordsEqual_equalWord() {
 
     assert(areWordsEqual(w1, w2));
 }
+
 void test_areWordsEqual_notEqualWord() {
     char str[] = "qwerty";
     wordDescriptor w1;
@@ -289,10 +298,12 @@ void test_areWordsEqual_notEqualWord() {
 
     assert(!areWordsEqual(w1, w2));
 }
-void test_areWordsEqual(){
+
+void test_areWordsEqual() {
     test_areWordsEqual_equalWord();
     test_areWordsEqual_notEqualWord();
 }
+
 void test_function() {
     test_strlen_();
 
@@ -601,92 +612,161 @@ void test_isStringHaveEqualWords() {
     test_isStringHaveEqualWords_withoutEqualWords();
     test_isStringHaveEqualWords_emptyString();
 }
-void test_getStringWithoutLastWordAndEqualToNim_stringWithWordEqualLastWord() {
+
+void test_getStringWithoutEqualLastWord_withEqualLastWord() {
     char str[] = "1 2 3 1";
     char s[MAX_STRING_SIZE + 1];
-    getStringWithoutLastWordAndEqualToNim(str,s);
-
-    char res[MAX_STRING_SIZE + 1] = "2 3";
-
-    ASSERT_STRING(res, s);
-}
-void test_getStringWithoutLastWordAndEqualToNim_stringWithoutWordEqualLastWord(){
-    char str[] = "qw er ty";
-    char s[MAX_STRING_SIZE + 1];
-    getStringWithoutLastWordAndEqualToNim(str,s);
-
-    char res[] = "qw er";
-
-    ASSERT_STRING(res, s);
-
-}
-void test_getStringWithoutLastWordAndEqualToNim_EqualWords() {
-    char str[] = "";
-    char s[MAX_STRING_SIZE + 1];
-    getStringWithoutLastWordAndEqualToNim(str, s);
-
-    char res[] = "";
-
-    ASSERT_STRING(res, s);
-}
-void test_getStringWithoutLastWordAndEqualToNim(){
-    test_getStringWithoutLastWordAndEqualToNim_stringWithWordEqualLastWord();
-    test_getStringWithoutLastWordAndEqualToNim_stringWithoutWordEqualLastWord();
-    test_getStringWithoutLastWordAndEqualToNim_EqualWords();
-}
-void test_deleteWordsEqualLastWord_withEqualLastWord() {
-    char str[] = "1 2 3 1";
-    char s[MAX_STRING_SIZE + 1];
-    deleteWordsEqualLastWord(str,s);
+    getStringWithoutEqualLastWord(str, s);
 
     char res[MAX_STRING_SIZE + 1] = "2 3 1";
 
     ASSERT_STRING(res, s);
 }
-void test_deleteWordsEqualLastWord_withoutEqualLastWord() {
+
+void test_getStringWithoutEqualLastWord_withoutEqualLastWord() {
     char str[] = "qw er ty";
     char s[MAX_STRING_SIZE + 1];
-    deleteWordsEqualLastWord(str, s);
+    getStringWithoutEqualLastWord(str, s);
 
     char res[] = "qw er ty";
 
     ASSERT_STRING(res, s);
 }
-    void test_deleteWordsEqualLastWord_EqualWords() {
-        char str[] = "1 1 1 1";
-        char s[MAX_STRING_SIZE + 1];
-        deleteWordsEqualLastWord(str,s);
 
-        char res[MAX_STRING_SIZE + 1] = "1";
+void test_getStringWithoutEqualLastWord_EqualWords() {
+    char str[] = "1 1 1 1";
+    char s[MAX_STRING_SIZE + 1];
+    getStringWithoutEqualLastWord(str, s);
 
-        ASSERT_STRING(res, s);
-    }
-void test_deleteWordsEqualLastWord(){
-    test_deleteWordsEqualLastWord_withEqualLastWord();
-    test_deleteWordsEqualLastWord_withoutEqualLastWord();
-    test_deleteWordsEqualLastWord_EqualWords();
+    char res[MAX_STRING_SIZE + 1] = "1";
+
+    ASSERT_STRING(res, s);
 }
+
+void test_getStringWithoutEqualLastWord_EmptyString() {
+    char str[] = "";
+    char s[MAX_STRING_SIZE + 1];
+    getStringWithoutEqualLastWord(str, s);
+
+    char res[MAX_STRING_SIZE + 1] = "";
+
+    ASSERT_STRING(res, s);
+}
+
+void test_getStringWithoutEqualLastWord() {
+    test_getStringWithoutEqualLastWord_withEqualLastWord();
+    test_getStringWithoutEqualLastWord_withoutEqualLastWord();
+    test_getStringWithoutEqualLastWord_EqualWords();
+    test_getStringWithoutEqualLastWord_EmptyString();
+}
+
 void test_deletePalindromeWords_stringWithPalindromeWords() {
     char str[] = "121 qweewq 123";
     char s[MAX_STRING_SIZE + 1];
-    deletePalindromeWords(str,s);
+    deletePalindromeWords(str, s);
 
     char res[MAX_STRING_SIZE + 1] = "123";
 
     ASSERT_STRING(res, s);
 }
-void test_deletePalindromeWords_stringWithoutPalindromeWords(){
+
+void test_deletePalindromeWords_stringWithoutPalindromeWords() {
     char str[] = "qw er ty";
     char s[MAX_STRING_SIZE + 1];
-    deletePalindromeWords(str,s);
+    deletePalindromeWords(str, s);
 
     char res[] = "qw er ty";
 
     ASSERT_STRING(res, s);
+}
 
-}void test_deletePalindromeWords(){
+void test_deletePalindromeWords_stringAllPalindromeWords() {
+    char str[] = "121 qweewq 11";
+    char s[MAX_STRING_SIZE + 1];
+    deletePalindromeWords(str, s);
+
+    char res[MAX_STRING_SIZE + 1] = "";
+
+    ASSERT_STRING(res, s);
+}
+
+void test_deletePalindromeWords_Emptystring() {
+    char str[] = "";
+    char s[MAX_STRING_SIZE + 1];
+    deletePalindromeWords(str, s);
+
+    char res[MAX_STRING_SIZE + 1] = "";
+
+    ASSERT_STRING(res, s);
+}
+
+void test_deletePalindromeWords() {
     test_deletePalindromeWords_stringWithPalindromeWords();
     test_deletePalindromeWords_stringWithoutPalindromeWords();
+    test_deletePalindromeWords_stringAllPalindromeWords();
+    test_deletePalindromeWords_Emptystring();
+}
+
+void test_getLastWordInFirstStringFromSecondString_emptyStr1() {
+    char str1[] = "";
+    char str2[] = "qwerty wasd 123";
+
+    wordDescriptor w;
+
+    bool res = getLastWordInFirstStringFromSecondString(str1, str2, &w);
+
+    assert(false == res);
+
+    printf("test_getLastWordInFirstStringFromSecondString_emptyStr1 - OK\n");
+}
+
+void test_getLastWordInFirstStringFromSecondString_withWordInStr1AndStr2() {
+    char str1[] = "12 34 qwerty";
+    char str2[] = "qwerty wasd 123";
+
+    wordDescriptor w;
+
+    bool res = getLastWordInFirstStringFromSecondString(str1, str2, &w);
+
+    assert(true == res);
+
+    char got[MAX_STRING_SIZE];
+    wordDescriptorToString(w, got);
+
+    char resWord[] = "qwerty";
+
+    ASSERT_STRING(resWord, got);
+}
+
+
+void test_getLastWordInFirstStringFromSecondString() {
+    test_getLastWordInFirstStringFromSecondString_withWordInStr1AndStr2();
+    test_getLastWordInFirstStringFromSecondString_emptyStr1();
+}
+
+void test_isLettersOfWordsInStringEqual_isEqualLetters() {
+    char s[MAX_STRING_SIZE + 1] = "qwe weq";
+
+    assert(isLettersOfWordsInStringEqual(s) == true);
+}
+
+
+void test_isLettersOfWordsInStringEqual_isNotEqualLetters() {
+    char s[MAX_STRING_SIZE + 1] = "wasd qwerty";
+
+    assert(isLettersOfWordsInStringEqual(s) == false);
+}
+
+void test_isLettersOfWordsInStringEqual_isEmptyString() {
+    char s[MAX_STRING_SIZE + 1] = "";
+
+    assert(isLettersOfWordsInStringEqual(s) == false);
+}
+
+void test_isLettersOfWordsInStringEqual() {
+    test_isLettersOfWordsInStringEqual_isEqualLetters();
+    test_isLettersOfWordsInStringEqual_isNotEqualLetters();
+    test_isLettersOfWordsInStringEqual_isEmptyString();
 }
 
 void test_tasks() {
@@ -701,9 +781,10 @@ void test_tasks() {
     test_getMergeString();
     testAll_getWordBeforeFirstWordWithA();
     test_isStringHaveEqualWords();
-    test_getStringWithoutLastWordAndEqualToNim();
-    test_deleteWordsEqualLastWord();
+    test_getStringWithoutEqualLastWord();
     test_deletePalindromeWords();
+    test_getLastWordInFirstStringFromSecondString();
+    test_isLettersOfWordsInStringEqual();
 }
 
 int main() {
