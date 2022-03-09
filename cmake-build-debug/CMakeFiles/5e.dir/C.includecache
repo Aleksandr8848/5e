@@ -33,6 +33,10 @@ string/string_/tasks/stringHaveEqualWords.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/stringHaveEqualWords.h
 string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h
+string/string_/tasks/deleteWordsEqualLastWord.h
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deleteWordsEqualLastWord.h
+string/string_/tasks/deletePalindromWords.h
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deletePalindromWords.h
 
 C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 stdio.h
@@ -47,6 +51,14 @@ memory.h
 -
 stdbool.h
 -
+
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deletePalindromWords.h
+../string_.h
+C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
+
+C:/Users/Admin/CLionProjects/5e/string/string_/tasks/deleteWordsEqualLastWord.h
+../string_.h
+C:/Users/Admin/CLionProjects/5e/string/string_/string_.h
 
 C:/Users/Admin/CLionProjects/5e/string/string_/tasks/digitToStart.h
 ../string_.h

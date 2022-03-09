@@ -4,6 +4,8 @@
 CMakeFiles/5e.dir/main.c.obj: \
  ../main.c \
  ../string/string_/string_.h \
+ ../string/string_/tasks/deletePalindromWords.h \
+ ../string/string_/tasks/deleteWordsEqualLastWord.h \
  ../string/string_/tasks/digitToStart.h \
  ../string/string_/tasks/getCountPalindromeWords.h \
  ../string/string_/tasks/getMergeString.h \

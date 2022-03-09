@@ -11,6 +11,8 @@
 #include "string/string_/tasks/printWordBeforeFirstWordWithA.h"
 #include "string/string_/tasks/stringHaveEqualWords.h"
 #include "string/string_/tasks/getStringWithoutLastWordAndEqualToNim.h"
+#include "string/string_/tasks/deleteWordsEqualLastWord.h"
+#include "string/string_/tasks/deletePalindromWords.h"
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
  __FILE__, __FUNCTION__, __LINE__)
@@ -267,7 +269,7 @@ void test_copyIfReverse() {
     test_copyIfReverse_digit_stringWithSpace();
 }
 
-void test_areWordsEqual() {
+void test_areWordsEqual_equalWord() {
     char str[] = "qwerty";
     wordDescriptor w1;
     wordDescriptor w2;
@@ -277,7 +279,20 @@ void test_areWordsEqual() {
 
     assert(areWordsEqual(w1, w2));
 }
+void test_areWordsEqual_notEqualWord() {
+    char str[] = "qwerty";
+    wordDescriptor w1;
+    wordDescriptor w2;
 
+    getWord(str, &w1);
+    getWord(str + 1, &w2);
+
+    assert(!areWordsEqual(w1, w2));
+}
+void test_areWordsEqual(){
+    test_areWordsEqual_equalWord();
+    test_areWordsEqual_notEqualWord();
+}
 void test_function() {
     test_strlen_();
 
@@ -605,10 +620,75 @@ void test_getStringWithoutLastWordAndEqualToNim_stringWithoutWordEqualLastWord()
     ASSERT_STRING(res, s);
 
 }
+void test_getStringWithoutLastWordAndEqualToNim_EqualWords() {
+    char str[] = "";
+    char s[MAX_STRING_SIZE + 1];
+    getStringWithoutLastWordAndEqualToNim(str, s);
+
+    char res[] = "";
+
+    ASSERT_STRING(res, s);
+}
 void test_getStringWithoutLastWordAndEqualToNim(){
     test_getStringWithoutLastWordAndEqualToNim_stringWithWordEqualLastWord();
     test_getStringWithoutLastWordAndEqualToNim_stringWithoutWordEqualLastWord();
+    test_getStringWithoutLastWordAndEqualToNim_EqualWords();
 }
+void test_deleteWordsEqualLastWord_withEqualLastWord() {
+    char str[] = "1 2 3 1";
+    char s[MAX_STRING_SIZE + 1];
+    deleteWordsEqualLastWord(str,s);
+
+    char res[MAX_STRING_SIZE + 1] = "2 3 1";
+
+    ASSERT_STRING(res, s);
+}
+void test_deleteWordsEqualLastWord_withoutEqualLastWord() {
+    char str[] = "qw er ty";
+    char s[MAX_STRING_SIZE + 1];
+    deleteWordsEqualLastWord(str, s);
+
+    char res[] = "qw er ty";
+
+    ASSERT_STRING(res, s);
+}
+    void test_deleteWordsEqualLastWord_EqualWords() {
+        char str[] = "1 1 1 1";
+        char s[MAX_STRING_SIZE + 1];
+        deleteWordsEqualLastWord(str,s);
+
+        char res[MAX_STRING_SIZE + 1] = "1";
+
+        ASSERT_STRING(res, s);
+    }
+void test_deleteWordsEqualLastWord(){
+    test_deleteWordsEqualLastWord_withEqualLastWord();
+    test_deleteWordsEqualLastWord_withoutEqualLastWord();
+    test_deleteWordsEqualLastWord_EqualWords();
+}
+void test_deletePalindromeWords_stringWithPalindromeWords() {
+    char str[] = "121 qweewq 123";
+    char s[MAX_STRING_SIZE + 1];
+    deletePalindromeWords(str,s);
+
+    char res[MAX_STRING_SIZE + 1] = "123";
+
+    ASSERT_STRING(res, s);
+}
+void test_deletePalindromeWords_stringWithoutPalindromeWords(){
+    char str[] = "qw er ty";
+    char s[MAX_STRING_SIZE + 1];
+    deletePalindromeWords(str,s);
+
+    char res[] = "qw er ty";
+
+    ASSERT_STRING(res, s);
+
+}void test_deletePalindromeWords(){
+    test_deletePalindromeWords_stringWithPalindromeWords();
+    test_deletePalindromeWords_stringWithoutPalindromeWords();
+}
+
 void test_tasks() {
     test_removeExtraSpaces();
     test_removeNonLetters();
@@ -622,12 +702,12 @@ void test_tasks() {
     testAll_getWordBeforeFirstWordWithA();
     test_isStringHaveEqualWords();
     test_getStringWithoutLastWordAndEqualToNim();
+    test_deleteWordsEqualLastWord();
+    test_deletePalindromeWords();
 }
 
 int main() {
     test_function();
     test_tasks();
-    char s3[] = "BC A";
-    printWordBeforeFirstWordWithA(s3);
     return 0;
 }

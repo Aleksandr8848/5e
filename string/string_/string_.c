@@ -115,7 +115,7 @@ bool getWordReverse(char *rBegin, char *rend, wordDescriptor *word) {
 bool areWordsEqual(wordDescriptor w1, wordDescriptor w2) {
     if (w1.end - w1.begin != w2.end - w2.begin)
         return false;
-    return memcmp(w1.begin, w2.begin, w1.end - w1.begin) == 0;
+    return !memcmp(w1.begin, w2.begin, w1.end - w1.begin);
 }
 
 void getBagOfWords(BagOfWords *bag, char *s) {

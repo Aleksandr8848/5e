@@ -13,17 +13,17 @@ void getStringWithoutLastWordAndEqualToNim(char *s, char *res) {
     getWordReverse(getEndOfString(s) - 1, s - 1, &lastWord);
 
     wordDescriptor readWord;
-    char *recPtr = res;
+//    char *recPtr = res;
     char *readPtr = s;
     while (getWord(readPtr, &readWord)) {
         if (!areWordsEqual(readWord, lastWord)) {
-            recPtr = copy(readWord.begin, readWord.end, recPtr);
-            *recPtr++ = ' ';
+            res = copy(readWord.begin, readWord.end, res);
+            *res++ = ' ';
         }
         readPtr = readWord.end;
     }
-    if (recPtr != s)
-        *--recPtr = '\0';
+    if (res != s)
+        *--res = '\0';
 }
 
 #endif //INC_5E_GETSTRINGWITHOUTLASTWORDANDEQUALTONIM_H
